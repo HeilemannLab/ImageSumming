@@ -72,7 +72,7 @@ class RunAnalysis():
 
     def create_run_convert_button(self):
         button = widgets.Button(
-            description="convert",
+            description="convert & save",
             disabled=False,
             button_style="",
             tooltip="convert localization file")

@@ -13,7 +13,7 @@ import tifffile
 
 
 def save_convert_file(data_path, converted_file):
-    # Convert localization file
+    # Convert localization file (csv & hdf5)
     save_dir = os.path.splitext(data_path)[0] + "_conv.csv"
     converted_file.to_csv(save_dir)
     print("File successfully saved at " + save_dir)

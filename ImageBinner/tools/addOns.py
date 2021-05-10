@@ -14,7 +14,7 @@ import pandas as pd
 
 
 class Converter():
-    # Convert localization file
+    # Convert csv localization files from Picasso to DeepSTORM2D format
     def __init__(self):
         self.converted_file = []
 
@@ -28,6 +28,28 @@ class Converter():
         file.index += 1
         file.frame += 1.0
         file = file[["frame", "x [nm]", "y [nm]", "intensity [photon]", "sigma [nm]"]]
+        file.columns = ["frame", "x [nm]", "y [nm]", "Photon #", "Sigma [nm]"]
+        self.converted_file = file
+
+
+class ConverterH5():
+    # Convert hdf5 localization files from Picasso to DeepSTORM2D format
+    def __init__(self):
+        self.converted_file = []
+
+    def convert(self, file_path):
+        """
+        Convert Picasso localization file into DeepSTORM2D format.
+        frame idx starts at 1
+        header = ,frame,x [nm],y [nm],Photon #,Sigma [nm]
+        """
+        h5_file = pd.HDFStore(file_path, "r")
+        file = h5_file.get("locs")
+        file.index += 1
+        file.frame += 1.0
+        sigmas = file.loc[:, ["sx", "sy"]]
+        file["Sigma [nm]"] = sigmas.mean(axis=1)
+        file = file[["frame", "x", "y", "photons", "Sigma [nm]"]]
         file.columns = ["frame", "x [nm]", "y [nm]", "Photon #", "Sigma [nm]"]
         self.converted_file = file
 
