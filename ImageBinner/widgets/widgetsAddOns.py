@@ -41,6 +41,8 @@ class DefineFiles():
     def open_file(self, b):
         root = tk.Tk()
         root.withdraw()
+        root.attributes("-topmost", True)
+        root.lift()
         root.update()
         root.name = askopenfilename(title=self.title, filetypes=(self.filetype, ("all files", "*.*")))
         self.file_path = root.name
@@ -137,6 +139,8 @@ class SaveResults():
     def open_dir(self, b):
         root = tk.Tk()
         root.withdraw()
+        root.attributes("-topmost", True)
+        root.lift()
         root.update()
         root.name = fd.askdirectory(initialdir=os.getcwd(), title="Please select a directory")
         root.update()

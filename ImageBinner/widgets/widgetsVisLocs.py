@@ -38,6 +38,8 @@ class DefineDirectory():
     def open_dir(self, b):
         root = tk.Tk()
         root.withdraw()
+        root.attributes("-topmost", True)
+        root.lift()
         root.update()
         root.name = fd.askdirectory(initialdir=os.getcwd(), title="Please select a directory")
         root.update()
