@@ -1,5 +1,7 @@
 *.egg-info/
 build/
+dist/
 .idea/
 .ipynb_checkpoints/
 *.pyc
+DS_SSIM_RSE_Maps.py

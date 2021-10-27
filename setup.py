@@ -10,7 +10,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(name="ImageBinner",
-                 version="08.04.2021",
+                 version="210408",
                  author="Johanna Rahm",
                  author_email="johanna-rahm@gmx.de",
                  description="bin random patches of localizations, workflow addon for DeepSTORM2D",
@@ -30,8 +30,7 @@ setuptools.setup(name="ImageBinner",
                                    "scikit-image",
                                    "pywin32",
                                    "plotly",
-                                   "h5py",
-                                   "pytables"],
+                                   "h5py"],
                    classifiers=["Programming Language :: Python :: 3",
                                   "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
                                   "Operating System :: OS Independent",],)

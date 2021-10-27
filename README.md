@@ -10,11 +10,12 @@ conda create --name ImageBinner
 conda activate ImageBinner
 cd path_to_file
 conda install pip
+pip install jupyterlab
 pip install ImageBinner-XXXXX-py3-none-any.whl
 pip install jupyter_contrib_nbextensions
-jupyter contrib nbextension install
 jupyter notebook 
 ```
+Give the analysis a try with the test files in the dataset folder, including a DNA-PAINT movie and corresponding localization file (converted to DeepSTORM format).
 
 ## Literature
 E. Nehme, L. E. Weiss, T. Michaeli, Y. Shechtman, Deep-STORM: super-resolution single-molecule microscopy by deep
@@ -29,4 +30,4 @@ Nature Communications, 2021, 12:2276, DOI: 10.1038/s41467-021-22518-0
 ## Web
 For more information visit:  </br>
 http://share.smb.uni-frankfurt.de  </br>
-https://github.com/JohannaRahm
+
