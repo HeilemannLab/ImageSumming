@@ -131,7 +131,7 @@ class GetPatches():
     def bin_patches(self, n_patches, bin_size, patch_size, camera_noise):
         self.random_patches_binned = np.asarray([np.zeros((patch_size, patch_size), dtype=int) for i in range(n_patches)])
         self.random_locs_binned = []
-        with tqdm(total=n_patches, desc="Patches binned") as pbar:
+        with tqdm(total=n_patches, desc="Patches summed") as pbar:
             for patch_idx in range(n_patches):
                 random_idx = random.sample(range(len(self.random_patches)), bin_size)
                 self.random_patches_binned_idx.append(random_idx)

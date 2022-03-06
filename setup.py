@@ -9,15 +9,15 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-setuptools.setup(name="ImageBinner",
-                 version="210408",
+setuptools.setup(name="ImageSumming",
+                 version="220306",
                  author="Johanna Rahm",
                  author_email="johanna-rahm@gmx.de",
-                 description="bin random patches of localizations, workflow addon for DeepSTORM2D",
+                 description="sum random patches of localizations, workflow addon for DeepSTORM2D",
                  long_description=long_description,
                  long_description_content_type="text/markdown",
                  licence="GNU GENERAL PUBLIC LICENSE",
-                 url="https:/github.com/JohannaRahm/ImageBinner",
+                 url="https:/github.com/JohannaRahm/ImageSumming",
                  packages=setuptools.find_packages(),
                  install_requires=["numpy",
                                    "matplotlib",

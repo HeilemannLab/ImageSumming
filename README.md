@@ -1,17 +1,17 @@
-# ImageBinner
+# ImageSumming
 
 workflow addon for DeepSTORM2D </br>
-bin random patches of movies & localization lists </br>
+sum random patches of movies & localization lists </br>
 evaluate found localizations of prediction vs ground truth 
 
 ## To install the package run:
 ```
-conda create --name ImageBinner
-conda activate ImageBinner
+conda create --name ImageSumming
+conda activate ImageSumming
 cd path_to_file
 conda install pip
 pip install jupyterlab
-pip install ImageBinner-XXXXX-py3-none-any.whl
+pip install ImageSumming-XXXXX-py3-none-any.whl
 pip install jupyter_contrib_nbextensions
 jupyter notebook 
 ```

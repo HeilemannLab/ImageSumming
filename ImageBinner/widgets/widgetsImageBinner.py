@@ -3,7 +3,7 @@
 Research group Heilemann
 Institute for Physical and Theoretical Chemistry, Goethe University Frankfurt a.M.
 
-Handle widgets of ImageBinner Jupyter Notebook.
+Handle widgets of ImageSumming Jupyter Notebook.
 """
 
 
@@ -84,9 +84,9 @@ class Parameters():
         return widget
 
     def create_camera_noise_box(self, val):
-        desc = "Camera noise [px intensity]"
+        desc = "Camera offset [px intensity]"
         style = {"description_width": "initial"}
-        widget = widgets.Text(value=str(val), placeholder="Insert average camera noise", description=str(desc), disabled=False, style=style)
+        widget = widgets.Text(value=str(val), placeholder="Insert average camera offset", description=str(desc), disabled=False, style=style)
         return widget
 
     def create_patch_size_box(self, val):
@@ -102,21 +102,21 @@ class Parameters():
         return widget
 
     def create_n_binned_patches_box(self, val):
-        desc = "Number of binned patches created"
+        desc = "Number of summed patches created"
         style = {"description_width": "initial"}
-        widget = widgets.Text(value=str(val), placeholder="Insert bin size", description=str(desc), disabled=False, style=style)
+        widget = widgets.Text(value=str(val), placeholder="Insert the amount of summed patches to be created", description=str(desc), disabled=False, style=style)
         return widget
 
     def create_bin_size_box(self, val):
-        desc = "Bin size"
+        desc = "Number of images per patch"
         style = {"description_width": "initial"}
-        widget = widgets.Text(value=str(val), placeholder="Insert bin size", description=str(desc), disabled=False, style=style)
+        widget = widgets.Text(value=str(val), placeholder="Insert the amount of images to be summed", description=str(desc), disabled=False, style=style)
         return widget
 
     def create_min_emitters_per_patch_box(self, val):
         desc = "Min emitters per patch"
         style = {"description_width": "initial"}
-        widget = widgets.Text(value=str(val), placeholder="Insert bin size", description=str(desc), disabled=False, style=style)
+        widget = widgets.Text(value=str(val), placeholder="Min emitters per patch to be used in summing", description=str(desc), disabled=False, style=style)
         return widget
 
     def create_display_movie_idx_dropdown(self, val, n_measurements):
