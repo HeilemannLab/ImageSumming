@@ -44,3 +44,11 @@ class DataMerge():
     def load_data(self, movie_dirs, loc_dirs):
         self.movies = [self.load_movie(movie_dir) for movie_dir in movie_dirs]
         self.loc_files = [self.load_localization(loc_dir) for loc_dir in loc_dirs]
+
+
+class SumFrames():
+    def __init__(self):
+        self.movie = []
+
+    def load_movie(self, movie_dir):
+        self.movie = io.imread(movie_dir)

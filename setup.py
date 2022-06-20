@@ -10,7 +10,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(name="ImageSumming",
-                 version="220306",
+                 version="220620",
                  author="Johanna Rahm",
                  author_email="johanna-rahm@gmx.de",
                  description="sum random patches of localizations, workflow addon for DeepSTORM2D",

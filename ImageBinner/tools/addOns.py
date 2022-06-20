@@ -11,6 +11,7 @@ DeepSTORM2DAddOns:
 
 import numpy as np
 import pandas as pd
+from tqdm.notebook import tqdm
 
 
 class Converter():
@@ -131,3 +132,26 @@ class SingleSplitter():
             self.single_frame_movies.append(new_movie)
 
         print("Successfully split data.")
+
+
+class SumFrames():
+    def __init__(self):
+        self.summed_frames = []
+
+    def sum_movie(self, movie, n_sum, offset):
+        self.summed_frames = []
+        movie = np.random.permutation(movie)
+        if len(movie) % n_sum:
+            print("Warning: The movie will be shortened to {} frames to avoid remainder of division.".format(str(len(movie)-(len(movie) % n_sum))))
+        with tqdm(total=len(movie)//n_sum, desc="Summed frames") as pbar:
+            for sum_block in range(len(movie)//n_sum):
+                start_idx = sum_block * n_sum
+                stop_idx = (sum_block+1) * n_sum
+                # go through every sum block & add frames together
+                summed_frame = np.full(np.shape(movie[0]), 0)
+                for frame in range(start_idx, stop_idx):
+                    summed_frame += movie[frame]
+                # correct for camera noise
+                summed_frame -= np.full(np.shape(movie[0]), offset*(n_sum-1))
+                self.summed_frames.append(summed_frame)
+                pbar.update(1)

@@ -95,3 +95,8 @@ def save_single_split_files(dir_path, filename, movies, locs):
             tifffile.imwrite(save_path + "_" + str(c) + ".tif", movie)
 
     print("Files saved at " + save_path)
+
+
+def save_sum_frames(save_path, movie):
+    tifffile.imwrite(save_path, movie)
+    print("Summed file saved at: " + save_path)

@@ -66,42 +66,15 @@ class DefineFiles():
 
 
 class RunAnalysis():
-    def __init__(self):
-        self.run_convert_button = self.create_run_convert_button()
-        self.run_split_button = self.create_run_split_button()
-        self.run_merge_button = self.create_run_merge_button()
-        self.run_single_split_button = self.create_run_single_split_button()
+    def __init__(self, desc, tooltip):
+        self.run_button = self.create_run_button(desc, tooltip)
 
-    def create_run_convert_button(self):
+    def create_run_button(self, desc, tooltip):
         button = widgets.Button(
-            description="convert & save",
+            description=desc,
             disabled=False,
             button_style="",
-            tooltip="convert localization file")
-        return button
-
-    def create_run_split_button(self):
-        button = widgets.Button(
-            description="split",
-            disabled=False,
-            button_style="",
-            tooltip="split data at frame")
-        return button
-
-    def create_run_merge_button(self):
-        button = widgets.Button(
-            description="merge",
-            disabled=False,
-            button_style="",
-            tooltip="merge files")
-        return button
-
-    def create_run_single_split_button(self):
-        button = widgets.Button(
-            description="split",
-            disabled=False,
-            button_style="",
-            tooltip="split data at every frame")
+            tooltip=tooltip)
         return button
 
     def create_clear_output(self):
@@ -165,15 +138,13 @@ class SaveResults():
         clear_output()
 
 
-# Split movie & localization file
+class ParameterBox():
+    def __init__(self, desc, placeholder):
+        self.value_box = self.create_value_box(desc, placeholder)
 
-class ParametersSplit():
-    def __init__(self):
-        self.frame_idx = self.create_frame_idx_box()
-
-    def create_frame_idx_box(self):
-        desc = "Split at frame"
+    def create_value_box(self, desc, placeholder):
+        desc = desc
         style = {"description_width": "initial"}
-        widget = widgets.Text(value=str(""), placeholder="Insert frame idx", description=str(desc),
+        widget = widgets.Text(value=str(""), placeholder=placeholder, description=str(desc),
                               disabled=False, style=style)
         return widget
