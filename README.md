@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/363403124.svg)](https://zenodo.org/badge/latestdoi/363403124)
+
 # ImageSumming
 
 workflow addon for DeepSTORM2D </br>
