@@ -10,7 +10,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(name="ImageSumming",
-                 version="220620",
+                 version="221116",
                  author="Johanna Rahm",
                  author_email="johanna-rahm@gmx.de",
                  description="sum random patches of localizations, workflow addon for DeepSTORM2D",
@@ -30,7 +30,9 @@ setuptools.setup(name="ImageSumming",
                                    "scikit-image",
                                    "pywin32",
                                    "plotly",
-                                   "h5py"],
+                                   "h5py",
+                                   "tables",
+                                   "jupyterlab"],
                    classifiers=["Programming Language :: Python :: 3",
                                   "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
                                   "Operating System :: OS Independent",],)
